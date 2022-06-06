@@ -20,14 +20,14 @@
             </div>
             <div class="col-span-8 md:col-span-5 lg:col-span-4">
                 <div class="mb-6">
-                <Heading :text="$t('shortDesc')" />
+                <Heading :isDark="isDark" :text="$t('shortDesc')" />
                 <Text v-if="weather.weather[0].main == 'Rain'" :text="$t('shortDescMessRain')" />
                 <Text v-else-if="weather.weather[0].main == 'Clear'" :text="$t('shortDescMessSun')" />
                 <Text v-else-if="weather.weather[0].main == 'Clouds'" :text="$t('shortDescMessCloud')" />
                 <Text v-else :text="$t('shortDescMessCloud')" />
                 </div>
                 <div>
-                <Heading :text="$t('shortDescOther')" />
+                <Heading :isDark="isDark" :text="$t('shortDescOther')" />
                 <div>
                     <DescDetail :text="$t('maxTemp')" :dataText="weather.main.temp_max" />
                     <DescDetail :text="$t('minTemp')" :dataText="weather.main.temp_min" />
