@@ -1,24 +1,24 @@
-# optiapp
+# OptiApp (Weather application)
+## Test task for Front end intern position
 
-## Project setup
-```
-npm install
-```
+> Build on Vue JS
+>
+> Open Weather API
+>
+> Tailwind css
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## DEMO:
+<div style="width: 100%; justify-content: center; display: flex">
+    <img style="width: 80%" src="./images/opti.gif" />
+</div>
 
-### Compiles and minifies for production
-```
-npm run build
-```
+</br>
+</br>
+</br>
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Screenshots:
+<div style="width: 100%; align-items: center; display: flex; flex-direction: column;">
+    <img style="width: 80%" src="./images/s1.jpg" />
+    </br .>
+    <img style="width: 80%" src="./images/s2.jpg" />
+</div>
