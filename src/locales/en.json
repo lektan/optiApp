@@ -1,0 +1,17 @@
+{
+  "temp": "Temperature",
+  "wind": "Wind",
+  "press": "Pressure",
+  "hum": "Humidity",
+  "shortDesc": "In-short",
+  "shortDescMessRain": "It's f*cking raining outside.",
+  "shortDescMessSun": "No wries, there is a sun outside ",
+  "shortDescMessCloud": "It's calm outside. The best time for a walk",
+  "shortDescOther": "Other details",
+  "maxTemp": "Maximum temperature",
+  "minTemp": "Minimum temperature",
+  "feelTemp": "Feels like",
+  "feelTemp": "Feels like",
+  "windDeg": "Wind direction (deg)",
+  "noCountry": "Please, fill input properly"
+}
