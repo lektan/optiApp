@@ -4,7 +4,7 @@
     </button>
 </template>
 
-<script>
+<script lang="ts">
 export default {
   name: "LangSwitch",
   data() {
@@ -12,11 +12,11 @@ export default {
   },
   methods: {
     langSwitch(){
-      if (this.$i18n.locale == 'ru') {
-        this.$i18n.locale = 'en';
+      if ((this as any).$i18n.locale == 'ru') {
+        (this as any).$i18n.locale = 'en';
         return
       }
-      this.$i18n.locale = 'ru'
+      (this as any).$i18n.locale = 'ru'
     }
     
   }

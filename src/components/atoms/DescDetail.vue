@@ -5,12 +5,13 @@
     </div>
 </template>
 
-<script>
+<script lang="ts">
+import {PropType} from 'vue'
     export default {
         name: 'DescDetail',
         props: {
-            text: String,
-            dataText: [String, Number]
+            text: String as PropType<string>,
+            dataText: [String, Number] as PropType<string | number>
         }
     }
 </script>

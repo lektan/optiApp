@@ -5,23 +5,24 @@
     </h1>
 </template>
 
-<script>
+<script lang="ts">
+import { PropType } from "vue"
     export default {
         name: 'Title',
         props: {
             text: {
-                type: [String, Number],
+                type: [String, Number] as PropType<string | number>,
                 default: 'Title'
             },
             size: {
-                type: String,
+                type: String as PropType<string>,
                 default: 'text-sm'
             },
             font: {
-                type: String,
+                type: String as PropType<string>,
                 default: 'font-[600]'
             },
-            typeOf: String,
+            typeOf: String as PropType<string>,
             degreeToF: Boolean
         }
     }

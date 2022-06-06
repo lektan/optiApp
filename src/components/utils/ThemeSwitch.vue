@@ -5,7 +5,8 @@
     </button>
 </template>
 
-<script>
+<script lang="ts">
+import { PropType } from "vue"
     export default {
         name: 'ThemeSwitch',
         data() {
@@ -15,11 +16,11 @@
             }
         },
         props: {
-            isDark: Boolean
+            isDark: Boolean as PropType<boolean>
         },
         methods: {
-            switchTheme () {
-                this.$emit('switch-theme')
+            switchTheme (): void {
+                (this as any).$emit('switch-theme')
             }
         }
     }

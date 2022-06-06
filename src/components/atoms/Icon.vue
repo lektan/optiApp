@@ -4,18 +4,20 @@
     </div>
 </template>
 
-<script>
+<script lang="ts">
+import { PropType } from "vue"
+
     export default {
         name: 'Icon',
         data() {
             return {
-                iconSVG: require(`../../assets/${this.type}.svg`),
+                iconSVG: require(`../../assets/${(this as any).type}.svg`),
             }
         },
         props: {
-            type: String,
+            type: String as PropType<string>,
             width: {
-                type: String,
+                type: String as PropType<string>,
                 default: 'w-[2rem]'
             }
         }

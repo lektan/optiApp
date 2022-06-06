@@ -1,7 +1,7 @@
 <template>
     <div :class="isDark ? 'bg-white border-[#bababa] shadow-boxDark' : 'bg-[#f1e9dd] border-[#333] shadow-box'" class=" h-[83vh] sm:h-auto overflow-auto border-2 rounded-md p-2 py-10 md:p-6 lg:p-10 mt-5">
         <transition name="fade" mode="out-in">
-        <div class="grid grid-cols-8 gap-6" :key="this.weather.id" v-if="weather.cod == 200">
+        <div class="grid grid-cols-8 gap-6" :key="weather.id" v-if="weather.cod == 200">
             <!-- SVGs -->
             <div class="lg:col-span-1 lg:grid-cols-1 grid lg:grid-rows-4 grid-rows-1 grid-cols-4 col-span-8">
                 <div class="relative flex justify-center items-center">
@@ -42,7 +42,7 @@
     </div>
 </template>
 
-<script>
+<script lang="ts">
 import Icon from '../atoms/Icon.vue';
 import ShortDetail from './ShortDetail.vue';
 import { useI18n } from 'vue-i18n'
@@ -50,27 +50,34 @@ import Heading from '../atoms/Heading.vue';
 import Text from '../atoms/Text.vue';
 import DescDetail from '../atoms/DescDetail.vue';
 import DegConvert from '../utils/DegConvert.vue';
+import { PropType } from 'vue';
+
+
+declare interface myData {
+    degreeToF: boolean,
+    weatherTemp: number
+}
 
     export default {
     name: "Hero",
     props: {
-        isDark: Boolean,
-        weather: Object,
+        isDark: Boolean as PropType<boolean>,
+        weather: Object as PropType<object>,
     },
-    data() {
+    data: (): myData =>  {
         return {
             degreeToF: false,
             weatherTemp: 0
         }
     },
     methods: {
-        toggleDeg() {
-            this.degreeToF = !this.degreeToF;
-            if(this.degreeToF) {
-                this.weatherTemp = ((this.weather.main.temp * 1.8) + 32).toFixed(1)
+        toggleDeg(): void {
+            (this as any).degreeToF = !(this as any).degreeToF;
+            if((this as any).degreeToF) {
+                (this as any).weatherTemp = (((this as any).weather.main.temp * 1.8) + 32).toFixed(1)
             }
             else {
-                this.weatherTemp = this.weather.main.temp
+                (this as any).weatherTemp = (this as any).weather.main.temp
             }
           
         }
@@ -78,15 +85,15 @@ import DegConvert from '../utils/DegConvert.vue';
     components: { Icon, ShortDetail, Heading, Text, DescDetail, DegConvert },
     setup() {
         const { t } = useI18n({
-        inheritLocale: true,
-        useScope: 'local'
+            inheritLocale: true,
+            useScope: 'local'
         })
         return { t }
     },
     updated () {
-        if (this.weather.cod == 200) {
-            this.weatherTemp = this.weather.main.temp,
-            this.degreeToF = false;
+        if ((this as any).weather.cod == 200) {
+            (this as any).weatherTemp = (this as any).weather.main.temp,
+            (this as any).degreeToF = false;
         }
     }
 }

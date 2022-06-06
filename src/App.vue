@@ -5,7 +5,7 @@
     </div>
 </template>
 
-<script>
+<script lang="ts">
 import Hero from './components/molecules/Hero.vue';
 import Header from './components/molecules/Header.vue';
 
@@ -13,29 +13,29 @@ export default {
     name: "App",
     components: { Hero, Header },
     data() {
-        let isDark = localStorage.getItem('darkMode') == 'true'
+        let isDark : boolean = localStorage.getItem('darkMode') == 'true'
         return {
-            api_key: "2b0835d90c1d588c0a80f2368015c5e2",
-            url_base: "https://api.openweathermap.org/data/2.5/",
-            weather: {},
+            api_key: "2b0835d90c1d588c0a80f2368015c5e2" as string,
+            url_base: "https://api.openweathermap.org/data/2.5/" as string,
+            weather: {} as object,
             isDark,
         };
     },
     methods: {
-        setValue (e) {
+        setValue (e: string): void {
           
-            fetch(`${this.url_base}weather?q=${e}&units=metric&APPID=${this.api_key}`)
+            fetch(`${(this as any).url_base}weather?q=${e}&units=metric&APPID=${(this as any).api_key}`)
                 .then(res => {
                     return res.json();
                 }).then(this.setResults);
         },
-        setResults (results) {
-            this.weather = results;
+        setResults (results): void {
+            (this as any).weather = results;
         
         },
-        toggleDarkMode(){
-            this.isDark = !this.isDark;
-            localStorage.setItem('darkMode', this.isDark);
+        toggleDarkMode(): void{
+            (this as any).isDark = !(this as any).isDark;
+            localStorage.setItem('darkMode', (this as any).isDark);
         },
     }
 }

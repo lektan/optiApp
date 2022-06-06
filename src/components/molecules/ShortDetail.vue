@@ -5,17 +5,19 @@
     </div>
 </template>
 
-<script>
+<script lang="ts">
 import Icon from '../atoms/Icon.vue';
 import Title from '../atoms/Title.vue';
+import { PropType } from 'vue';
+
     export default {
     name: "ShortDetail",
     components: { Icon, Title },
     props: {
-        titleText: String,
-        dataText: [Number, String],
-        type: String,
-        degreeToF: Boolean
+        titleText: String as PropType<string>,
+        dataText: [Number, String] as PropType<string | number>,
+        type: String as PropType<string>,
+        degreeToF: Boolean as PropType<boolean>
     }
 }
 </script>

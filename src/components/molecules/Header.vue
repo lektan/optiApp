@@ -8,21 +8,24 @@
     </div>
 </template>
 
-<script>
+<script lang="ts">
 import Input from '../atoms/Input.vue';
 import ThemeSwitch from '../utils/ThemeSwitch.vue';
 import LangSwitch from '../utils/LangSwitch.vue';
+import { PropType } from 'vue';
+
+
     export default {
     components: { Input, ThemeSwitch, LangSwitch },
     props:{
-        isDark: Boolean,
+        isDark: Boolean as PropType<boolean>,
     },
     methods: {
-        setValue(e) {
-            this.$emit('set-value', e)
+        setValue(e: string): void {
+            (this as any).$emit('set-value', e)
         },
-        toggleDarkMode() {
-            this.$emit('switch-theme')
+        toggleDarkMode(): void {
+            (this as any).$emit('switch-theme')
         }
     }
 }
