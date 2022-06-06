@@ -17,8 +17,7 @@
 </br>
 
 ## Screenshots:
-<div style="width: 100%; align-items: center; display: flex; flex-direction: column;">
+<div style="width: 100%; align-items: center; display: grid; grid-template-columns: 3fr 1fr ; gap: 10px">
     <img style="width: 80%" src="./images/s1.jpg" />
-    </br .>
     <img style="width: 80%" src="./images/s2.jpg" />
 </div>
